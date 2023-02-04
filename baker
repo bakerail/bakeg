@@ -1,0 +1,10 @@
+import requests
+email = "rockmedeal@gmail.com"
+api = f"https://CheckEmailTikAllDomains.aegos112.repl.co/email={email}"
+response = requests.get(api).json()
+if response['result']['status']=='available':
+    print(f'Available : {email}')
+elif response['result']['status']=='unavailable':
+    print(f'Unavailable : {email}')
+else:
+    print(f'Error : {email}')
